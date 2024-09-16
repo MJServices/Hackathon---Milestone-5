@@ -1,0 +1,267 @@
+/* Global body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 12px;
+    padding: 15px; /* Adjusted padding for smaller screens */
+    background-color: hsl(0, 54%, 73%);
+    line-height: 1.6;
+}
+
+/* General container styling */
+.container {
+    max-width: 100%; /* Allow container to take full width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Center text alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Flexbox layout for the form and resume template sections */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Added gap for more consistent spacing */
+}
+
+/* Column layout for sections (form input and resume output) */
+.column {
+    width: 48%;
+    margin-bottom: 50px;
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .column {
+        width: 100%; /* Stack columns on top of each other */
+    }
+}
+
+/* Heading color, font, and size changes */
+h1, h2, h3, h4 {
+    color: rgb(135, 13, 94);
+    font-family: 'Georgia', serif;
+    font-size: 2rem; /* Use rem for scaling */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3, h4 {
+    font-size: 1.5rem;
+}
+
+/* Style for labels */
+label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #6d085e;
+    margin-bottom: 5px;
+    display: block;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+/* Optional: Add a hover effect to labels */
+label:hover {
+    color: #007BFF;
+}
+
+/* ======= Form Card Styles ======= */
+.card {
+    background-color: rgb(236, 255, 129);
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(203, 167, 167, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #5b0c4a;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ======= Button Styles ======= */
+.btn {
+    background-color: #db91ba;
+    color: rgb(62, 8, 35);
+    padding: 15px 25px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Added rounded edges */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #79126d;
+}
+
+/* ======= List Styles ======= */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* ======= Resume Template Styles ======= */
+.resume-box {
+    background-color: rgb(236, 255, 129);
+    padding: 20px;
+    margin-top: 20px;
+    border: 3px solid #630440;
+    border-radius: 8px;
+}
+
+.column-left {
+    width: 30%;
+    margin-bottom: 50px;
+    min-height: 500px;
+}
+
+.column-right {
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.myimg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+@media (max-width: 768px) {
+    .myimg {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.column-left p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+    .column-left,
+    .column-right {
+        width: 100%;
+    }
+}
+
+/* ======= Section Box Styling ======= */
+.section {
+    border: 2px solid rgb(236, 255, 129);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+/* Skills Section Styling */
+.skills-box {
+    border: 2px solid #650b50;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: #f0e5ec;
+}
+
+.skills-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.skills-box ul li {
+    margin-bottom: 10px;
+    color: #5b0c4a;
+    font-size: 16px;
+}
+
+/* Objective, Work Experience, and Academic Achievement Box Styling */
+.objective-box,
+.work-experience-box,
+.academic-achievement-box {
+    border: 2px solid #650b50;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: #f0e5ec;
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3, h4 {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .column-left,
+    .column-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .resume-box {
+        margin-top: 10px;
+    }
+}
+
+/* Universal reset for smoother display across devices */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

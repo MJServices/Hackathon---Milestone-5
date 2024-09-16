@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Resume Generator</title>
+  </head>
+
+  <body>
+    <!-- CV form -->
+    <div class="container" id="Resume-Form">
+      <h1 class="text-center my-4">Resume Generator</h1>
+      <p class="text-center mb-5">By Waniya Mustafa</p>
+
+      <div class="row">
+        <!-- Personal Information Section -->
+        <div class="column">
+          <div class="card">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+              <label for="nameField">Your Name</label>
+              <input type="text" id="nameField" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contactField">Your Contact</label>
+              <input type="text" id="contactField" placeholder="Enter your contact number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="addressField">Your Address</label>
+              <textarea id="addressField" placeholder="Enter your address" required rows="3"></textarea>
+            </div>
+
+            <!-- New Image Upload Field -->
+            <div class="form-group">
+              <label for="imgField">Upload Profile Picture</label>
+              <input type="file" id="imgField" accept="image/*" required />
+            </div>
+
+            <h4>Important Links</h4>
+
+            <div class="form-group">
+              <label for="fbField">Facebook</label>
+              <input type="text" id="fbField" placeholder="Enter your Facebook link" required />
+            </div>
+
+            <div class="form-group">
+              <label for="instaField">Instagram</label>
+              <input type="text" id="instaField" placeholder="Enter your Instagram link" required />
+            </div>
+
+            <div class="form-group">
+              <label for="linkedInField">LinkedIn</label>
+              <input type="text" id="linkedInField" placeholder="Enter your LinkedIn link" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Information Section -->
+        <div class="column">
+          <div class="card">
+            <h2>Professional Information</h2>
+
+            <div class="form-group">
+              <label for="objectiveField">Objective</label>
+              <textarea id="objectiveField" placeholder="Enter your objective" required rows="3"></textarea>
+            </div>
+
+            <!-- Skills Section in Professional Information -->
+            <div class="form-group">
+              <label for="skillsField">Skills</label>
+              <div id="skills">
+                <textarea id="skillsField" class="skillsField" placeholder="Enter your skills" required rows="3"></textarea>
+              </div>
+              <button onclick="addNewSkillsField()" class="btn mt-2" id="skillsAddButton">Add Skill</button>
+            </div>
+
+            <div class="form-group" id="we">
+              <label for="weFieldAddButton">Work Experience</label>
+              <textarea class="weField" id="weFieldAddButton" placeholder="Enter your Work experience" required rows="3"></textarea>
+            </div>
+
+            <div id="weAddButton">
+              <button onclick="addNewweField()" class="btn">Add Work Experience</button>
+            </div>
+
+            <div class="form-group" id="Ac">
+              <label for="AcFieldAddButton">Academic Qualification</label>
+              <textarea class="AcField" id="AcFieldAddButton" placeholder="Enter your Academic Qualification" required rows="3"></textarea>
+            </div>
+
+            <div id="AcAddButton">
+              <button onclick="addNewAcField()" class="btn">Add Academic Qualification</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons to generate resume -->
+      <div class="text-center">
+        <button onclick="generateCV()" class="btn">Generate</button>
+        <button onclick="generateCVBelow()" class="btn">Generate CV Below</button>
+      </div>
+    </div>
+
+    <!-- CV template -->
+    <div class="container" id="Resume-Template" style="display: none">
+      <div class="resume-box">
+        <div class="row">
+          <!-- Left Column (Image and Links) -->
+          <div class="column-left">
+            <img
+              src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+              alt="Profile Image"
+              class="myimg"
+            />
+            <div>
+              <p id="nameT1">Your Name</p>
+              <p id="contactT">Contact</p>
+              <p id="adT">Address</p>
+              <hr />
+              <p><a id="fbT" href="#">Facebook</a></p>
+              <p><a id="instaT" href="#">Instagram</a></p>
+              <p><a id="linkT" href="#">LinkedIn</a></p>
+            </div>
+          </div>
+
+          <!-- Right Column (Details) -->
+          <div class="column-right">
+            <h1 id="nameT2" class="text-center">Your Name</h1>
+
+            <!-- Objective Section -->
+            <div class="section objective-box">
+              <h3>Objective</h3>
+              <p id="objT">Your Objective goes here.</p>
+            </div>
+
+            <!-- Skills Section in CV Template -->
+            <div class="skills-box">
+              <h4>Skills</h4>
+              <ul></ul>
+            </div>
+
+            <!-- Work Experience Section -->
+            <div class="section work-experience-box">
+              <h3>Work Experience</h3>
+              <ul id="weT">
+                <!-- Work Experience items will be added here -->
+              </ul>
+            </div>
+
+            <!-- Academic Qualification Section -->
+            <div class="section academic-achievement-box">
+              <h3>Academic Qualification</h3>
+              <ul id="acT">
+                <!-- Academic qualifications will be added here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons for editing, printing, and generating shareable link -->
+      <div class="text-center">
+        <button onclick="editResume()" class="btn">Edit Resume</button>
+        <button onclick="printCV()" class="btn">Print CV</button>
+        <button onclick="generateShareableLink()" class="btn">Get Shareable Link</button>
+      </div>
+
+      <!-- Shareable Link Section -->
+      <div class="form-group text-center">
+        <label for="shareableLink">Shareable Link:</label>
+        <input type="text" id="shareableLink" readonly />
+        <button onclick="copyLink()">Copy Link</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
